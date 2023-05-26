@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid blue; */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F0F0F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+}
+
+main {
+    background-color: white;
+    max-width: 840px;
+    width: 100%;
+    border-radius: 24px 24px 200px 24px;
+    display: flex;
+    justify-content: center;
+    margin: 0 30px;
+}
+
+img {
+    display: block;
+}
+
+section {
+    width: 90%;
+    padding: 56px 0;
+}
+
+.section-1 {
+    display: flex;
+    gap: 32px;
+}
+
+.section-2 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+input {
+    max-width: 160px;
+    height: 72px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    outline: 1px solid #DCDCDC;
+    font-weight: 700;
+    font-size: 32px;
+    opacity: 1;
+    color: #151515;
+    padding: 12px 24px;
+    caret-color: #854DFF;
+}
+
+input:focus {
+    outline: 1px solid #854DFF;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 104px;
+    line-height: 114.4px;
+    color: #151515;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+span {
+    color: #854DFF;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    color: #716F6F;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    color: #716F6F;
+    margin-bottom: 8px;
+}
+
+.button {
+    width: 96px;
+    height: 96px;
+    background-color: #854DFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button:active {
+    background-color: #151515;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-weight: 700;
+    font-size: 32px;
+    color: rgba(1, 1, 1, 0.5);
+    opacity: 1;
+    /* Firefox */
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    font-weight: 700;
+    color: #716F6F;
+
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}

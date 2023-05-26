@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Age Calculator</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <div id="form" class="section-1">
+                <div class="day">
+                    <label>
+                        <h3>DAY</h3>
+                    </label>
+                    <input type="number" id="dayValue" placeholder="DD" required>
+                </div>
+                <div class="month">
+                    <label>
+                        <h3>MONTH</h3>
+                    </label>
+                    <input type="number" id="monthValue" placeholder="MM" required>
+                </div>
+                <div class="year">
+                    <label>
+                        <h3>YEAR</h3>
+                    </label>
+                    <input type="number" id="yearValue" placeholder="YYYY" required>
+                </div>
+            </div>
+            <div class="section-2">
+                <div onclick="calculateAge()" class="button"><img src="./assets/icon-arrow.svg" alt="Arrow Icon"></div>
+            </div>
+            <div class="section-3">
+                <h1><span id="computedDayValue">--</span>years</h1>
+                <h1><span id="computedMonthValue">--</span>months</h1>
+                <h1><span id="computedYearValue">--</span>days</h1>
+            </div>
+        </section>
+    </main>
+
+</body>
+<script src="./app.js"></script>
+
+</html>
