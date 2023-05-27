@@ -13,11 +13,12 @@ function validateForm() {
 
     // Validate empty fields
     if (!day || !month || !year) {
-        alert("Please fill in all the fields.");
+        document.getElementById('emptyError').textContent = "Please fill in all the fields."
         return;
     }
 
     // Call the calculateAge() function for further processing
+    document.getElementById('emptyError').textContent = ""
     calculateAge();
 }
 
@@ -36,10 +37,11 @@ function calculateAge() {
 
     // Validate day
     const maxDay = new Date(year, month, 0).getDate();
+    console.log(maxDay);
     if (day > maxDay) {
         document.getElementById("dayError").textContent = "Must be a valid day";
-        document.getElementById('dayValue').style.outline = "1px solid #FF5959"
-        document.getElementById('dayH3').style.color = "#FF5959"
+        document.getElementById("dayValue").style.outline = "1px solid #FF5959";
+        document.getElementById("dayH3").style.color = "#FF5959";
         return false; // Prevent form submission
     }
 
@@ -47,8 +49,9 @@ function calculateAge() {
     if (month > 12) {
         document.getElementById("monthError").textContent =
             "Must be a valid month";
-        document.getElementById('monthValue').style.outline = "1px solid #FF5959"
-        document.getElementById('monthH3').style.color = "#FF5959"
+        document.getElementById("monthValue").style.outline =
+            "1px solid #FF5959";
+        document.getElementById("monthH3").style.color = "#FF5959";
         return false; // Prevent form submission
     }
 
@@ -56,8 +59,9 @@ function calculateAge() {
     if (year > currentYear) {
         document.getElementById("yearError").textContent =
             "Must be in the past";
-        document.getElementById('yearValue').style.outline = "1px solid #FF5959"
-        document.getElementById('yearH3').style.color = "#FF5959"
+        document.getElementById("yearValue").style.outline =
+            "1px solid #FF5959";
+        document.getElementById("yearH3").style.color = "#FF5959";
         return false; // Prevent form submission
     }
 
@@ -68,30 +72,51 @@ function calculateAge() {
     ) {
         document.getElementById("yearError").textContent =
             "Must be in the past";
-        document.getElementById('dayH3').style.color = "#FF5959"
-        document.getElementById('monthH3').style.color = "#FF5959"
-        document.getElementById('yearH3').style.color = "#FF5959"
-        document.getElementById('dayValue').style.outline = "1px solid #FF5959"
-        document.getElementById('monthValue').style.outline = "1px solid #FF5959"
-        document.getElementById('yearValue').style.outline = "1px solid #FF5959"
+        document.getElementById("dayH3").style.color = "#FF5959";
+        document.getElementById("monthH3").style.color = "#FF5959";
+        document.getElementById("yearH3").style.color = "#FF5959";
+        document.getElementById("dayValue").style.outline = "1px solid #FF5959";
+        document.getElementById("monthValue").style.outline =
+            "1px solid #FF5959";
+        document.getElementById("yearValue").style.outline =
+            "1px solid #FF5959";
         return false; // Prevent form submission
     } else {
-        document.getElementById('dayH3').style.color = "#716F6F"
-        document.getElementById('monthH3').style.color = "#716F6F"
-        document.getElementById('yearH3').style.color = "#716F6F"
-        document.getElementById('dayValue').style.outline = "1px solid #854DFF"
-        document.getElementById('monthValue').style.outline = "1px solid #854DFF"
-        document.getElementById('yearValue').style.outline = "1px solid #854DFF"
+        document.getElementById("dayH3").style.color = "#716F6F";
+        document.getElementById("monthH3").style.color = "#716F6F";
+        document.getElementById("yearH3").style.color = "#716F6F";
+        document.getElementById("dayValue").style.outline = "1px solid #854DFF";
+        document.getElementById("monthValue").style.outline =
+            "1px solid #854DFF";
+        document.getElementById("yearValue").style.outline =
+            "1px solid #854DFF";
         document.getElementById("dayError").textContent = "";
         document.getElementById("monthError").textContent = "";
         document.getElementById("yearError").textContent = "";
         let yearsDiff = currentYear - year;
         let monthsDiff = currentMonth - month;
         let daysDiff = currentDay - day;
+        console.log(currentDay, day);
         // Adjust the differences if the birth date hasn't occurred yet in the current year
         if (monthsDiff < 0 || (monthsDiff === 0 && daysDiff < 0)) {
-            yearsDiff = yearsDiff - 1;
-            monthsDiff = monthsDiff + 12;
+            yearsDiff--;
+            monthsDiff += 12;
+        }
+        // Calculate the number of days in the birth month
+        const birthMonthDays = new Date(
+            birthDateObj.getFullYear(),
+            birthDateObj.getMonth() + 1,
+            0
+        ).getDate();
+        // Adjust the month and day differences if the day value is negative
+        if (daysDiff < 0) {
+            monthsDiff--;
+            const lastMonthDays = new Date(
+                currentDate.getFullYear(),
+                currentDate.getMonth(),
+                0
+            ).getDate();
+            daysDiff += lastMonthDays;
         }
         document.getElementById("computedDayValue").textContent = daysDiff;
         document.getElementById("computedMonthValue").textContent = monthsDiff;
