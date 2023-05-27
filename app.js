@@ -13,12 +13,13 @@ function validateForm() {
 
     // Validate empty fields
     if (!day || !month || !year) {
-        document.getElementById('emptyError').textContent = "Please fill in all the fields."
+        document.getElementById("emptyError").textContent =
+            "Please fill in all the fields.";
         return;
     }
 
     // Call the calculateAge() function for further processing
-    document.getElementById('emptyError').textContent = ""
+    document.getElementById("emptyError").textContent = "";
     calculateAge();
 }
 
@@ -42,6 +43,12 @@ function calculateAge() {
         document.getElementById("dayError").textContent = "Must be a valid day";
         document.getElementById("dayValue").style.outline = "1px solid #FF5959";
         document.getElementById("dayH3").style.color = "#FF5959";
+        document.getElementById("monthValue").style.outline =
+            "1px solid #FF5959";
+        document.getElementById("monthH3").style.color = "#FF5959";
+        document.getElementById("yearValue").style.outline =
+            "1px solid #FF5959";
+        document.getElementById("yearH3").style.color = "#FF5959";
         return false; // Prevent form submission
     }
 
@@ -49,9 +56,14 @@ function calculateAge() {
     if (month > 12) {
         document.getElementById("monthError").textContent =
             "Must be a valid month";
+        document.getElementById("dayValue").style.outline = "1px solid #FF5959";
+        document.getElementById("dayH3").style.color = "#FF5959";
         document.getElementById("monthValue").style.outline =
             "1px solid #FF5959";
         document.getElementById("monthH3").style.color = "#FF5959";
+        document.getElementById("yearValue").style.outline =
+            "1px solid #FF5959";
+        document.getElementById("yearH3").style.color = "#FF5959";
         return false; // Prevent form submission
     }
 
@@ -59,6 +71,11 @@ function calculateAge() {
     if (year > currentYear) {
         document.getElementById("yearError").textContent =
             "Must be in the past";
+        document.getElementById("dayValue").style.outline = "1px solid #FF5959";
+        document.getElementById("dayH3").style.color = "#FF5959";
+        document.getElementById("monthValue").style.outline =
+            "1px solid #FF5959";
+        document.getElementById("monthH3").style.color = "#FF5959";
         document.getElementById("yearValue").style.outline =
             "1px solid #FF5959";
         document.getElementById("yearH3").style.color = "#FF5959";
@@ -72,14 +89,14 @@ function calculateAge() {
     ) {
         document.getElementById("yearError").textContent =
             "Must be in the past";
-        document.getElementById("dayH3").style.color = "#FF5959";
-        document.getElementById("monthH3").style.color = "#FF5959";
-        document.getElementById("yearH3").style.color = "#FF5959";
         document.getElementById("dayValue").style.outline = "1px solid #FF5959";
+        document.getElementById("dayH3").style.color = "#FF5959";
         document.getElementById("monthValue").style.outline =
             "1px solid #FF5959";
+        document.getElementById("monthH3").style.color = "#FF5959";
         document.getElementById("yearValue").style.outline =
             "1px solid #FF5959";
+        document.getElementById("yearH3").style.color = "#FF5959";
         return false; // Prevent form submission
     } else {
         document.getElementById("dayH3").style.color = "#716F6F";

@@ -21,7 +21,7 @@ main {
     border-radius: 24px 24px 200px 24px;
     display: flex;
     justify-content: center;
-    margin: 0 30px;
+    margin: 0 16px;
 }
 
 img {
@@ -126,7 +126,9 @@ p {
 ::-ms-input-placeholder {
     /* Microsoft Edge */
     font-weight: 700;
-    color: #716F6F;
+    font-size: 32px;
+    color: rgba(1, 1, 1, 0.5);
+    opacity: 1;
 
 }
 
@@ -140,4 +142,101 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
+}
+
+@media screen and (width <=660px) {
+    input {
+        font-size: 20px;
+        height: 54px;
+        padding: 6px;
+    }
+
+    h1 {
+        font-size: 56px;
+        line-height: 61.6px;
+    }
+
+    h3 {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    p {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 4px;
+    }
+
+    ::placeholder {
+        font-size: 20px;
+    }
+
+    .button {
+        width: 64px;
+        height: 64px;
+    }
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+
+    section {
+        width: 90%;
+        padding: 48px 0;
+    }
+
+    .section-1 {
+        gap: 16px;
+    }
+
+    .section-2 {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (width <=375px) {
+    input {
+        font-size: 16px;
+        height: 36px;
+    }
+
+    h1 {
+        font-size: 42px;
+        line-height: 50px;
+    }
+
+    h3 {
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    p {
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    ::placeholder {
+        font-size: 16px;
+    }
+
+    section {
+        width: 90%;
+        padding: 32px 0;
+    }
+
+    .button {
+        width: 48px;
+        height: 48px;
+    }
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .section-2 {
+        justify-content: center;
+    }
 }
