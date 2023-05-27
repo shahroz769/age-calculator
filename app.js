@@ -38,7 +38,6 @@ function calculateAge() {
 
     // Validate day
     const maxDay = new Date(year, month, 0).getDate();
-    console.log(maxDay);
     if (day > maxDay) {
         document.getElementById("dayError").textContent = "Must be a valid day";
         document.getElementById("dayValue").style.outline = "1px solid #FF5959";
@@ -113,7 +112,6 @@ function calculateAge() {
         let yearsDiff = currentYear - year;
         let monthsDiff = currentMonth - month;
         let daysDiff = currentDay - day;
-        console.log(currentDay, day);
         // Adjust the differences if the birth date hasn't occurred yet in the current year
         if (monthsDiff < 0 || (monthsDiff === 0 && daysDiff < 0)) {
             yearsDiff--;
