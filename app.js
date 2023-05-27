@@ -85,11 +85,11 @@ function calculateAge() {
         document.getElementById("dayH3").style.color = "#716F6F";
         document.getElementById("monthH3").style.color = "#716F6F";
         document.getElementById("yearH3").style.color = "#716F6F";
-        document.getElementById("dayValue").style.outline = "1px solid #854DFF";
+        document.getElementById("dayValue").style.outline = "1px solid #DCDCDC";
         document.getElementById("monthValue").style.outline =
-            "1px solid #854DFF";
+            "1px solid #DCDCDC";
         document.getElementById("yearValue").style.outline =
-            "1px solid #854DFF";
+            "1px solid #DCDCDC";
         document.getElementById("dayError").textContent = "";
         document.getElementById("monthError").textContent = "";
         document.getElementById("yearError").textContent = "";
